@@ -54,10 +54,10 @@ end
 ; See Info tab for full copyright and license.
 @#$#@#$#@
 GRAPHICS-WINDOW
-11
-114
-542
-264
+7
+83
+538
+233
 -1
 -1
 1.0
@@ -115,10 +115,10 @@ NIL
 0
 
 PLOT
-12
-273
-539
-430
+8
+242
+535
+399
 Inkomstfördelning
 Inkomst
 Antal personer
@@ -133,10 +133,10 @@ PENS
 "current" 5.0 1 -10899396 true "" "set-plot-y-range 0 40\nhistogram [ wealth ] of turtles"
 
 MONITOR
-599
-423
-744
+351
 468
+514
+513
 wealth of bottom 50%
 bottom-50-pct-wealth
 1
@@ -144,10 +144,10 @@ bottom-50-pct-wealth
 11
 
 MONITOR
-598
-365
-744
+350
 410
+514
+455
 wealth of top 10%
 top-10-pct-wealth
 1
@@ -165,10 +165,10 @@ Total inkomst = SEK 50 000
 1
 
 PLOT
+8
+408
+342
 558
-203
-892
-353
 Inkomst i procent
 Simulerade perioder
 NIL
@@ -183,6 +183,17 @@ PENS
 "högsta 10%" 1.0 0 -2674135 true "" "plot top-10-pct-wealth"
 "lägsta 50%" 1.0 0 -13345367 true "" "plot bottom-50-pct-wealth"
 "mitten 50-90%" 1.0 0 -7500403 true "" "plot middle-class"
+
+MONITOR
+351
+520
+514
+565
+Inkomst för mitten 50-90%
+middle-class
+17
+1
+11
 
 @#$#@#$#@
 ## ACKNOWLEDGMENT
