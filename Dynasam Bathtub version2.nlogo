@@ -32,7 +32,7 @@ to setup
 ;draw-thermometer -80 * sf 50 * sf 5 * sf 60
 
 ;Initiera nivån i badkaret.
-  ask patches with [pcolor = white and pycor < ((startnivå - 880) / 10)] [
+  ask patches with [pcolor = 9.9 and pycor < ((startnivå - 880) / 10)] [
       sprout-water 1 [
         set size 2
         set pen-size 1
@@ -452,23 +452,6 @@ temperature
 1
 1
 11
-
-BUTTON
-51
-265
-144
-298
-Load image
-LoadImage
-NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
 
 @#$#@#$#@
 ## VAD ÄR DET HÄR?
