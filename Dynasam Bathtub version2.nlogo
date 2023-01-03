@@ -17,11 +17,11 @@ to setup
   fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_1.png" import-a:pcolors
 
   ;Rita utloppet från badkaret
-  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor grey]]
-  ask patches [if (pxcor = -48 * sf or pxcor = -49 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor grey]]
-  ask patches [if (pycor = -57 * sf or pycor = -56 * sf) and pxcor >= -60 * sf and pxcor <= -48 * sf [set pcolor grey]]
-  ask patches [if abs pycor = 98 * sf [set pcolor grey]]
-  ask patches [if abs pxcor = 98 * sf [set pcolor grey]]
+  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
+  ask patches [if (pxcor = -48 * sf or pxcor = -49 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
+  ask patches [if (pycor = -57 * sf or pycor = -56 * sf) and pxcor >= -60 * sf and pxcor <= -48 * sf [set pcolor red]]
+  ask patches [if abs pycor = 98 * sf [set pcolor red]]
+  ask patches [if abs pxcor = 98 * sf [set pcolor red]]
 
 ;circle -80 60 5 60
 ;draw-thermometer -80 * sf 50 * sf 5 * sf 60
@@ -121,7 +121,7 @@ end
 ;När vatten flödat ut och slår i botten av avloppet
 to remove-water
   ask water [
-    if grey = [pcolor] of patch-ahead 1 [die]
+    if red = [pcolor] of patch-ahead 1 [die]
   ]
 end
 
