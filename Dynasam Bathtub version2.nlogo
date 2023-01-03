@@ -7,21 +7,26 @@ breed [term terms]
 water-own [direction]  ;;  1 follows right-hand wall,
                          ;; -1 follows left-hand wall
 
+to loadImage
+
+
+end
 
 to setup
   clear-all
+
   set sf 2 ; sf = scalefactor för att kunna ändra storleken på world. FUNKAR INTE!
   ask patches [set pcolor 48.8]  ;Samma färg som bakgrunden på badkaret
 
-  ;;Läs in badkarsbilden från fil
-  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_1.png" import-a:pcolors
+    ;;Läs in badkarsbilden från fil
+  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_2.png" import-a:pcolors
 
   ;Rita utloppet från badkaret
-  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
-  ask patches [if (pxcor = -48 * sf or pxcor = -49 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
-  ask patches [if (pycor = -57 * sf or pycor = -56 * sf) and pxcor >= -60 * sf and pxcor <= -48 * sf [set pcolor red]]
-  ask patches [if abs pycor = 98 * sf [set pcolor red]]
-  ask patches [if abs pxcor = 98 * sf [set pcolor red]]
+;  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
+;  ask patches [if (pxcor = -48 * sf or pxcor = -49 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
+;  ask patches [if (pycor = -57 * sf or pycor = -56 * sf) and pxcor >= -60 * sf and pxcor <= -48 * sf [set pcolor red]]
+;  ask patches [if abs pycor = 98 * sf [set pcolor red]]
+;  ask patches [if abs pxcor = 98 * sf [set pcolor red]]
 
 ;circle -80 60 5 60
 ;draw-thermometer -80 * sf 50 * sf 5 * sf 60
@@ -121,7 +126,7 @@ end
 ;När vatten flödat ut och slår i botten av avloppet
 to remove-water
   ask water [
-    if red = [pcolor] of patch-ahead 1 [die]
+    if 14.9 = [pcolor] of patch-ahead 1 [die]
   ]
 end
 
@@ -131,7 +136,7 @@ end
 to empty-tub [x]
   ;Hur ska jag tömma ut vattnet? Kan jag göra på samma sätt som för påfyllningen?
 
-  let nr 2 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
+  let nr 3 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
   ask up-to-n-of x turtles with [ycor < -50] [  ;Väljer från turtles som är närmare botten
     move-to patch ((nr * sf) - (52 * sf)) (-51 * sf)
     set heading 180
@@ -312,7 +317,7 @@ Tillflöde
 Tillflöde
 0
 45
-35.0
+25.0
 5
 1
 NIL
@@ -327,7 +332,7 @@ Utflöde
 Utflöde
 0
 45
-35.0
+40.0
 5
 1
 NIL
@@ -447,6 +452,23 @@ temperature
 1
 1
 11
+
+BUTTON
+51
+265
+144
+298
+Load image
+LoadImage
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## VAD ÄR DET HÄR?
