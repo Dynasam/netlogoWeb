@@ -32,7 +32,7 @@ to setup
 ;draw-thermometer -80 * sf 50 * sf 5 * sf 60
 
 ;Initiera nivån i badkaret.
-  ask patches with [pcolor = 9.9 and pycor < ((startnivå - 880) / 10)] [
+  ask patches with [pcolor = 9.9 and pycor < ((startniva - 880) / 10)] [
       sprout-water 1 [
         set size 2
         set pen-size 1
@@ -400,8 +400,8 @@ SLIDER
 75
 203
 108
-Startnivå
-Startnivå
+Startniva
+Startniva
 0
 880
 420.0
