@@ -22,7 +22,7 @@ to setup
 
 
 
-  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_2.png" [
+  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_3.png" [
     text ->
     import-a:pcolors text
 
@@ -37,7 +37,7 @@ to setup
 ;draw-thermometer -80 * sf 50 * sf 5 * sf 60
 
 ;Initiera nivån i badkaret.
-  ask patches with [pcolor = 9.9 and pycor < ((startniva - 880) / 10)] [
+  ask patches with [pcolor = 9.9 and pycor < ((startnivå - 880) / 10)] [
       sprout-water 1 [
         set size 2
         set pen-size 1
@@ -61,6 +61,7 @@ to go
   reflow ;Omfördela vatten
   remove-water ;Tabort vatten som flödat ut
 
+  if ppm > 900 [stop]
   tick
 end
 
@@ -76,7 +77,7 @@ let lx sublist l 0 x
         set size 2
         set pen-size 1
         facexy a * sf 34 * sf
-        set color blue
+        set color 108 ;blue
         set direction 1
         set shape "square"
       ]
@@ -143,23 +144,33 @@ end
 to empty-tub [x]
   ;Hur ska jag tömma ut vattnet? Kan jag göra på samma sätt som för påfyllningen?
 
-  let nr 3 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
+  let l [0 -1 1 -2 2 -3 3 -4 4] ;En lista över vilja pxcor som vatten flödar in ifrån
+;  let nr 3 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
+  let nr 0 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
   ask up-to-n-of x turtles with [ycor < -50] [  ;Väljer från turtles som är närmare botten
-    move-to patch ((nr * sf) - (52 * sf)) (-51 * sf)
+;    move-to patch ((nr * sf) - (52 * sf)) (-51 * sf)
+    move-to patch (((item nr l) * sf) - (53 * sf)) (-51 * sf)
     set heading 180
-    set nr nr - 1
+    set color 108
+;    set nr nr - 1
+    set nr nr + 1
   ]
+
+  let lx sublist l 0 x
+
 end
 
 ;Flytta ned alla water som kan flyttas ned
 to move-down-if-possible
 
   ask water with [heading != 180] [
-          let yc ycor
-          let nb neighbors with [pycor <= yc and (0 != pcolor) and not (any? other turtles-here)]
-          let nbempty (count nb) ; (count water-on nb) ;Hur många av grannarna har vatten?
-          if nbempty > 0 [move-to one-of nb]
-        ]
+    let yc ycor
+    ;nb är patches nedanför eller vid sidan av vattnet som inte är svart och som
+    ;inte har några vatten på sig. Alltså helt tomt vitt under.
+    let nb neighbors with [pycor <= yc and (0 != pcolor) and not (any? other turtles-here)]
+    let nbempty (count nb) ; (count water-on nb) ;Hur många av grannarna har vatten?
+    if nbempty > 0 [move-to one-of nb]
+  ]
 
 end
 
@@ -174,18 +185,19 @@ ask turtles [
   if ycor = 10 [
     set xcor 150 - random 300
     set ycor 0
+    set color white
   ]
   let dir whichDirection?
 
   if dir = 1 [fd 1]
   if dir = 2 [
     set heading 90
-    ifelse ycor < 0  [set color blue][set color yellow]
+    ifelse ycor < 0 [set color blue][set color white] ;yellow]
     fd 1
   ]
   if dir = 3 [
     set heading 270
-    ifelse ycor < 0  [set color blue][set color yellow]
+    ifelse ycor < 0  [set color blue][set color white] ;yellow]
     fd 1
   ]
  ]
@@ -350,8 +362,8 @@ SLIDER
 35
 323
 68
-Startniva
-Startniva
+Startnivå
+Startnivå
 0
 880
 420.0
