@@ -255,10 +255,10 @@ end
 ;----------------------------------------------------------------------------------------
 @#$#@#$#@
 GRAPHICS-WINDOW
-210
-10
-825
-626
+117
+81
+732
+697
 -1
 -1
 1.514
@@ -282,10 +282,10 @@ ticks
 30.0
 
 BUTTON
-81
-35
-148
-68
+27
+134
+92
+167
 Kör
 go
 T
@@ -299,10 +299,10 @@ NIL
 0
 
 BUTTON
-13
-35
-77
-68
+27
+92
+91
+125
 Initiera
 setup
 NIL
@@ -316,10 +316,10 @@ NIL
 1
 
 SLIDER
-13
-112
-105
-145
+336
+35
+428
+68
 Tillflöde
 Tillflöde
 0
@@ -331,10 +331,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-111
-112
-203
-145
+434
+35
+526
+68
 Utflöde
 Utflöde
 0
@@ -346,10 +346,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-13
-75
-203
-108
+133
+35
+323
+68
 Startniva
 Startniva
 0
@@ -360,21 +360,11 @@ Startniva
 ppm
 HORIZONTAL
 
-TEXTBOX
-33
-343
-183
-694
-Jag har inte något bra sätt att omvandla flödena till tidsenheter. 45 ska exempelvis motsvara antalet Gton per år. Men det omvandlas ju inte till ppm på något uttänkt sätt. ppm är egentligen bara höjden i badkaret. Varje vattenimpuls innehåller 7 sköldpaddor. Dessa 7 kommer maximalt en gång per tick. 1 ppm CO2 = 2,3 Gtn. Om vi låter varje tick vara en dag. Då ska vi fylla på 45/365 per tick.\n\nJag har en relation som säger att det går ca 30 sköldpaddor per ppm. Det betyder i så fall att varje sköldpadda är 2,3/30=0,08 Gton. Hur många tick tar det att nå 45? Men 45 så pulsar den 7 varannan tick. Jag ska komma upp i 45/(7*0,08)=83,8 och gånger två då för att nå antalet ticks. 167,6. Låt varje tick vara 2 dagar. 
-10
-0.0
-1
-
 MONITOR
-13
-163
-70
-208
+189
+105
+246
+150
 År
 period
 1
@@ -382,10 +372,10 @@ period
 11
 
 MONITOR
-79
-163
-136
-208
+260
+105
+317
+150
 ppm
 ppm
 1
@@ -393,10 +383,10 @@ ppm
 11
 
 MONITOR
-145
-163
-203
-208
+332
+105
+390
+150
 Temp
 temperature
 1
@@ -430,7 +420,13 @@ Det går att nå netto-noll genom att påverka både tillflödet och utflödet. 
 
 Turtles use the `patch-right-and-ahead` primitive to look at patches around themselves, relative to the direction the turtle is facing.
 
-<!-- 2007 -->
+## TEXT SOM FÖRKLARAR MER VAD JAG GJORT, MÅSTE UTVECKAS
+
+Jag har inte något bra sätt att omvandla flödena till tidsenheter. 45 ska exempelvis motsvara antalet Gton per år. Men det omvandlas ju inte till ppm på något uttänkt sätt. ppm är egentligen bara höjden i badkaret. Varje vattenimpuls innehåller 7 sköldpaddor. Dessa 7 kommer maximalt en gång per tick. 1 ppm CO2 = 2,3 Gtn. Om vi låter varje tick vara en dag. Då ska vi fylla på 45/365 per tick.
+
+Jag har en relation som säger att det går ca 30 sköldpaddor per ppm. Det betyder i så fall att varje sköldpadda är 2,3/30=0,08 Gton. Hur många tick tar det att nå 45? Men 45 så pulsar den 7 varannan tick. Jag ska komma upp i 45/(7*0,08)=83,8 och gånger två då för att nå antalet ticks. 167,6. Låt varje tick vara 2 dagar. 
+
+<!-- 2022 Dynasam -->
 @#$#@#$#@
 default
 true
