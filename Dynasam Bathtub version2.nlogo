@@ -19,7 +19,12 @@ to setup
   ask patches [set pcolor 48.8]  ;Samma färg som bakgrunden på badkaret
 
     ;;Läs in badkarsbilden från fil
-  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_2.png" import-a:pcolors
+
+
+
+  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_2.png" [
+    text ->
+    import-a:pcolors text
 
   ;Rita utloppet från badkaret
 ;  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
@@ -41,6 +46,8 @@ to setup
         set shape "square"
       ]
   ]
+  ]
+
 
   reset-ticks
 end
