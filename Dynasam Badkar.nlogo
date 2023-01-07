@@ -342,7 +342,7 @@ Tillflöde
 Tillflöde
 0
 45
-35.0
+20.0
 5
 1
 NIL
@@ -418,7 +418,7 @@ Detta är en så kallad badkarsmodell över koncentrationen av koldioxid i atmos
 
 ## HUR FUNGERAR DET
 
-Välj en startnivå på koldioxid. Nivån för 2022 är 420 ppm. Med en högre koncentration så kommer uppvärmningen av jorden att öka. Ökningen av temperaturen antas vara 0,085 grad per 10 ppm ökning i atmosfären. Detta gäller ungefär vid en klimatkänslighet på 3 grader Celsius (https://scied.ucar.edu/interactive/climate-sensitivity-calculator). 
+Välj en startnivå på koldioxid. Klicka på initiera och sedan kör. Nivån för 2022 är 420 ppm. Med en högre koncentration så kommer uppvärmningen av jorden att öka. Ökningen av temperaturen antas vara 0,085 grad per 10 ppm ökning i atmosfären. Detta gäller ungefär vid en klimatkänslighet på 3 grader Celsius (https://scied.ucar.edu/interactive/climate-sensitivity-calculator). 
 
 ### Vattenpunkter per ppm
 Vi styr förändringen genom att påverka tillflödet av ny koldioxid i badkaret och genom att påverka utflödet från badkaret. Inflödet och utflödet gäller antalet Gigaton koldioxid som släpps ut årligen. Omvandlingen sker genom att initiera modellen vid ungefär halva badkaret fyllt. Denna nivå kallas 420 ppm. Utifrån storleken på badkaret vid den nivån som motsvarar det 12689 vattenpunkter. Följaktligen kommer varje ppm att motsvara 12689/420 = 30,212 vattenpunkter. 
@@ -440,16 +440,13 @@ När tillflödet och utflödet är lika stora så förblir vattennivån stabil. 
 Det går att nå netto-noll genom att påverka både tillflödet och utflödet. Fundera lite på vilka olika insatser som skulle påverka respektive flöde. 
 
 
-## EXTENDING THE MODEL
-
-Det går exempelvis att lägga till fler diagram. ...
-
 ## NETLOGO FEATURES
 
-Några särskilda aspekter gällande visualiseringen kan noteras. Det gäller särskilt sättet att flytta runt sköldpaddorna så att badkaret ser någorlunda fyllt ut. Detta är ganska invecklat men det påverkar inte beräkningarna på något sätt. Bland annat tillämpar det Netlogomodellen Wall. Hänvisa till den!
+Några särskilda aspekter gällande visualiseringen kan noteras. Det gäller särskilt sättet att flytta runt sköldpaddorna så att badkaret ser någorlunda fyllt ut. Detta är ganska invecklat men det påverkar inte beräkningarna på något sätt. Bland annat tillämpar det Netlogomodellen Wall Following.
 
-En annan sak att notera är inläsningen av badkarsbilden och hur den omvandlas till Netlogo-färger. Använd extensions fetch och import-a.
+En annan sak att notera är inläsningen av badkarsbilden och hur den omvandlas till Netlogo-färger där "extensions" Fetch och Import-a används.
 
+Modellen är programmerad av Fredrik Cullberg Jansson, Dynasam och kan användas fritt. 
 
 <!-- 2022 Dynasam -->
 @#$#@#$#@
