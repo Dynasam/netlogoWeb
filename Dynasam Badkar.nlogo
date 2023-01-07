@@ -19,29 +19,15 @@ to setup
   ask patches [set pcolor 48.8]  ;Samma färg som bakgrunden på badkaret
 
     ;;Läs in badkarsbilden från fil
-
-
-
   fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/bathtub2_3.png" [
     text ->
     import-a:pcolors text
-
-  ;Rita utloppet från badkaret
-;  ask patches [if (pxcor = -60 * sf or pxcor = -59 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
-;  ask patches [if (pxcor = -48 * sf or pxcor = -49 * sf) and pycor > -57 * sf and pycor < -51 * sf [set pcolor red]]
-;  ask patches [if (pycor = -57 * sf or pycor = -56 * sf) and pxcor >= -60 * sf and pxcor <= -48 * sf [set pcolor red]]
-;  ask patches [if abs pycor = 98 * sf [set pcolor red]]
-;  ask patches [if abs pxcor = 98 * sf [set pcolor red]]
-
-;circle -80 60 5 60
-;draw-thermometer -80 * sf 50 * sf 5 * sf 60
 
 ;Initiera nivån i badkaret. Det är en nivå som ligger omkring hälften av
 ;badkaret. Den nivån är godtycklig och vald för den visuella upplevelsen.
 ;Den genererar ca 12000 vattenpunkter. Modellen kalibreras så att detta
 ;motsvarar 420 ppm. Se Info-fliken hur.
   ask patches with [pcolor = 9.9 and pycor < ((startnivå - 880) / 10)] [
-;  ask patches with [pcolor = 9.9 and pycor < ((startnivå - 882) / 20)] [
       sprout-water 1 [
         set size 2
         set pen-size 1
@@ -144,21 +130,15 @@ to remove-water
   ]
 end
 
-;Hur tömmer jag kärlet?
-;Ett sätt att göra det är att välja en slumpmässig droppe och lägga den i utloppet och sätta dess
-;heading till 180
+;Här tömmer jag kärlet
 to empty-tub [x]
-  ;Hur ska jag tömma ut vattnet? Kan jag göra på samma sätt som för påfyllningen?
 
   let l [0 -1 1 -2 2 -3 3 -4 4] ;En lista över vilja pxcor som vatten flödar in ifrån
-;  let nr 3 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
   let nr 0 ;För att påbörja loopen nedan, sedan kommer nästa vatten att läggas på patchen till vänster
   ask up-to-n-of x turtles with [ycor < -50] [  ;Väljer från turtles som är närmare botten
-;    move-to patch ((nr * sf) - (52 * sf)) (-51 * sf)
     move-to patch (((item nr l) * sf) - (53 * sf)) (-51 * sf)
     set heading 180
     set color 108
-;    set nr nr - 1
     set nr nr + 1
   ]
 
@@ -207,12 +187,12 @@ ask turtles [
     fd 1
   ]
  ]
+
+  ;Temperaturfärgning är inte tillämpad!
   ;Börja kallt och gå upp till en behaglig blå. Gå sedan över till en mörkare nyans som övergår i rött
   ;ifelse count water < 2000 [set color blue] [ifelse count water < 3000 [set color scale-color blue (count water) 5000 1000] [set color scale-color orange (count water) 2000 5000]]
   ;set color scale-color blue (count water) 6000 -1000
 end
-
-;jag ska också testa om en vatten hamnat utanför boxen (vilket kan hända om jag har en öppning för utflöde) för då ska den tas bort!
 
 ;Returnerar TRUE om det är en wall framför, dvs att patch har färgen brun
 ;to-report wall? [angle]  ;; turtle procedure
@@ -273,13 +253,13 @@ end
 ;----------------------------------------------------------------------------------------
 @#$#@#$#@
 GRAPHICS-WINDOW
-107
-80
+120
+93
 619
 593
 -1
 -1
-1.257
+1.22444
 1
 10
 1
@@ -300,10 +280,10 @@ ticks
 30.0
 
 BUTTON
-27
-134
-92
-167
+35
+150
+100
+183
 Kör
 go
 T
@@ -317,10 +297,10 @@ NIL
 0
 
 BUTTON
-27
-92
-91
-125
+35
+108
+99
+141
 Initiera
 setup
 NIL
@@ -334,40 +314,40 @@ NIL
 1
 
 SLIDER
-336
-35
-428
-68
+135
+149
+227
+182
 Tillflöde
 Tillflöde
 0
 45
-20.0
+45.0
 5
 1
-NIL
+Gt
 HORIZONTAL
 
 SLIDER
-434
-35
-526
-68
+233
+149
+325
+182
 Utflöde
 Utflöde
 0
 45
-20.0
+0.0
 5
 1
-NIL
+Gt
 HORIZONTAL
 
 SLIDER
-133
-35
-323
-68
+135
+110
+325
+143
 Startnivå
 Startnivå
 0
@@ -379,37 +359,47 @@ ppm
 HORIZONTAL
 
 MONITOR
-189
-105
-246
-150
+247
+406
+325
+447
 År
 period
 1
 1
-11
+10
 
 MONITOR
-260
-105
-317
-150
-ppm
+329
+407
+418
+448
+Koldioxid, ppm
 ppm
 1
 1
-11
+10
 
 MONITOR
-332
-105
-390
-150
-Temp
+422
+407
+502
+448
+Temperatur
 temperature
 1
 1
-11
+10
+
+TEXTBOX
+30
+32
+626
+86
+Dynasams badkarsmodell: Välj Startnivå för mängden koldioxid i atmosfären. Nivån 2022 är ca 420 ppm. Välj inflöde och utflöde av koldioxid, mätt i miljoner ton per år. Initiera sedan modellen genom att klicka \"Initiera\" och därefter \"Kör\". Ändra reglagen på inflöde och utflöde för att se hur ppm och temperatur förändras över tid. 
+12
+0.0
+1
 
 @#$#@#$#@
 ## VAD ÄR DET HÄR?
