@@ -446,7 +446,14 @@ Några särskilda aspekter gällande visualiseringen kan noteras. Det gäller s�
 
 En annan sak att notera är inläsningen av badkarsbilden och hur den omvandlas till Netlogo-färger där "extensions" Fetch och Import-a används.
 
-Modellen är programmerad av Fredrik Cullberg Jansson, Dynasam och kan användas fritt. 
+## Credits and References
+
+Programvaran Netlogo:
+Wilensky, U. (1999). NetLogo. http://ccl.northwestern.edu/netlogo/. Center for Connected Learning and Computer-Based Modeling, Northwestern University, Evanston, IL.
+
+Den specifika implementeringen:
+Modellen är programmerad av Fredrik Cullberg Jansson, Dynasam. Den är utvecklad i demonstrationssyfte och kan användas fritt. För mer information vänligen kontakta info@dynasam.com
+
 
 <!-- 2022 Dynasam -->
 @#$#@#$#@
