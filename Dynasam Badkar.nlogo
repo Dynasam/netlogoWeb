@@ -254,9 +254,9 @@ end
 @#$#@#$#@
 GRAPHICS-WINDOW
 120
-93
+106
 619
-593
+606
 -1
 -1
 1.22444
@@ -281,9 +281,9 @@ ticks
 
 BUTTON
 35
-150
+163
 100
-183
+196
 Kör
 go
 T
@@ -298,9 +298,9 @@ NIL
 
 BUTTON
 35
-108
+121
 99
-141
+154
 Initiera
 setup
 NIL
@@ -315,9 +315,9 @@ NIL
 
 SLIDER
 135
-149
+162
 239
-182
+195
 Inflöde
 Inflöde
 0
@@ -330,9 +330,9 @@ HORIZONTAL
 
 SLIDER
 248
-149
+162
 343
-182
+195
 Utflöde
 Utflöde
 0
@@ -345,9 +345,9 @@ HORIZONTAL
 
 SLIDER
 135
-110
+123
 343
-143
+156
 Startnivå
 Startnivå
 0
@@ -360,9 +360,9 @@ HORIZONTAL
 
 MONITOR
 247
-406
+419
 325
-447
+460
 År
 period
 1
@@ -371,9 +371,9 @@ period
 
 MONITOR
 329
-407
+420
 418
-448
+461
 Koldioxid, ppm
 ppm
 1
@@ -382,9 +382,9 @@ ppm
 
 MONITOR
 422
-407
+420
 502
-448
+461
 Temperatur
 temperature
 1
@@ -393,11 +393,11 @@ temperature
 
 TEXTBOX
 30
-32
-626
-86
-Dynasams badkarsmodell: Välj Startnivå för mängden koldioxid i atmosfären. Nivån 2022 är ca 420 ppm. Välj inflöde och utflöde av koldioxid, mätt i miljoner ton per år. Initiera sedan modellen genom att klicka \"Initiera\" och därefter \"Kör\". Ändra reglagen på inflöde och utflöde för att se hur ppm och temperatur förändras över tid. 
 12
+626
+97
+Dynasams badkarsmodell: Välj Startnivå för mängden koldioxid i atmosfären. Nivån 2022 är ca 420 ppm. Välj inflöde och utflöde av koldioxid (mätt i miljarder ton per år). Initiera sedan modellen genom att klicka \"Initiera\" och därefter \"Kör\". Ändra reglagen på inflöde och utflöde för att se hur ppm och temperatur förändras över tid. För mer information läs under fliken Model Info under modellen. 
+14
 0.0
 1
 
