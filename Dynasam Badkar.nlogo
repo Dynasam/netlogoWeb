@@ -360,9 +360,9 @@ HORIZONTAL
 
 MONITOR
 247
-419
+420
 325
-460
+461
 År
 period
 1
