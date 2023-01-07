@@ -94,10 +94,10 @@ end
 to inflow
 
   ;Öppna kranen varannan ticks och släpp ut motsvarande tillflödes-knappen
-  if Tillflöde > 0
+  if inflöde > 0
   [
     if ticks mod 2 = 0 [  ;Det blir för tätt att generera vatten varje period!
-      new-water (Tillflöde / 5)
+      new-water (inflöde / 5)
     ]
   ]
 end
@@ -316,10 +316,10 @@ NIL
 SLIDER
 135
 149
-227
+239
 182
-Tillflöde
-Tillflöde
+Inflöde
+Inflöde
 0
 45
 45.0
@@ -329,9 +329,9 @@ Gt
 HORIZONTAL
 
 SLIDER
-233
+248
 149
-325
+343
 182
 Utflöde
 Utflöde
@@ -346,7 +346,7 @@ HORIZONTAL
 SLIDER
 135
 110
-325
+343
 143
 Startnivå
 Startnivå
