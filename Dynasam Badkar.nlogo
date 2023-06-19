@@ -79,7 +79,8 @@ end
 
 to-report period
 ;  report 2022 + (ticks / (0.5 * 365))
-  report 2022 + (ticks / 143.9)
+;  report 2022 + (ticks / 143.9)
+  report 2022 + (ticks / 38.96)
 end
 
 to-report ppm
@@ -322,7 +323,7 @@ Inflöde
 Inflöde
 0
 45
-45.0
+35.0
 5
 1
 Gt
@@ -337,7 +338,7 @@ Utflöde
 Utflöde
 0
 45
-0.0
+20.0
 5
 1
 Gt
@@ -415,10 +416,10 @@ Vi styr förändringen genom att påverka tillflödet av ny koldioxid i badkaret
 
 Vi tillämpar denna regel för att räkna om antalet vattenpunkter till ppm. 
 
-Fysikalsikt gäller att 1 ppm motsvarar ca 2,1 Gigaton koldioxid. Det innebär att i modellen kommer varje vattenpunkt att motsvara 2,1/30,212 = 0,0695 Gigaton CO2.
+Fysikalsikt gäller att 1 ppm motsvarar ca 7,8 Gigaton koldioxid. Det innebär att i modellen kommer varje vattenpunkt att motsvara 7,8/30,212 = 0,2571 Gigaton CO2. 
 
 ### Tidräkningen
-Nästa steg i kalibreringen av modellen är påfyllnaden av nytt vatten och hur tidräkningen ska definieras. Simuleringen tillåter årliga flöden på 0 - 45 Gigaton, i intervall om 5 Gigaton. Enligt design, för att låta vattnet rinna på ett visuellt lämpligt sätt, så genereras vattenimpulser varannan tick. Antalet vatten per gång är maximalt 9. Under perioden 2 ticks så kommer det alltså maximalt att kunna flöda in 9 vatten vilket omräknat motsvarar 0,6255 Gigaton per två perioder eller 0,31275 per period. Det innebär i sin tur att vid ett maximalt inflöde om 45 Gigaton på ett år så kommer ett år att motsvaras av  45/0,31275 = 143,9 perioder i modellen. 
+Nästa steg i kalibreringen av modellen är påfyllnaden av nytt vatten och hur tidräkningen ska definieras. Simuleringen tillåter årliga flöden på 0 - 45 Gigaton, i intervall om 5 Gigaton. Enligt design, för att låta vattnet rinna på ett visuellt lämpligt sätt, så genereras vattenimpulser varannan tick. Antalet vatten per gång är maximalt 9. Under perioden 2 ticks så kommer det alltså maximalt att kunna flöda in 9 vatten vilket omräknat motsvarar 9 * 0,2571 = 2,31 Gigaton per två perioder eller 1,155 per period. Det innebär i sin tur att vid ett maximalt inflöde om 45 Gigaton på ett år så kommer ett år att motsvaras av  45/0,31275 = 38,96 perioder i modellen. 
 
 
 ## SAKER ATT NOTERA
