@@ -69,8 +69,8 @@ end
 ;https://github.com/NetLogo/ImportA-Extension#readme
 to setupImage
   ;;Läs in bilden från fil
-  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
 ;  fetch:file-async "C:/Users/fredr/OneDrive - Dynasam/Dynasam/Simuleringsexempel/Utvecklingsprojekt/Degrowth/Island_for_netlogo.png" [
+  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
     text ->
     import-a:pcolors text
   ]
@@ -79,7 +79,11 @@ end
 to setup
   clear-all
   set harvest 0
-  setupImage
+;  setupImage
+  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
+    text ->
+    import-a:pcolors text
+  ]
   ask patches [
     if pcolor > 51 and pcolor < 54 [set pcolor 2]
     set init-color pcolor
