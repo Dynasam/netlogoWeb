@@ -74,16 +74,16 @@ to setupImage
     text ->
     import-a:pcolors text
   ]
-  ask patches [
-    if pcolor > 51 and pcolor < 54 [set pcolor 2]
-    set init-color pcolor
-  ]
 end
 
 to setup
   clear-all
   set harvest 0
   setupImage
+  ask patches [
+    if pcolor > 51 and pcolor < 54 [set pcolor 2]
+    set init-color pcolor
+  ]
   init_globals
 ;  ask patches [
 ;    set pcolor 45 ;yellow
