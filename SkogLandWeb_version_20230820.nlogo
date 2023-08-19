@@ -234,10 +234,10 @@ to-report medellivslängd
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-235
-10
-647
-423
+76
+50
+488
+463
 -1
 -1
 4.0
@@ -261,11 +261,11 @@ ticks
 30.0
 
 BUTTON
-90
-12
-154
-45
-setup
+6
+88
+68
+121
+Initiera
 setup
 NIL
 1
@@ -278,11 +278,11 @@ NIL
 1
 
 BUTTON
-160
-12
-223
-45
-go
+6
+126
+68
+159
+Kör
 go
 T
 1
@@ -295,10 +295,10 @@ NIL
 1
 
 PLOT
-657
-10
-1008
-217
+498
+50
+825
+257
 Population och produktion
 NIL
 NIL
@@ -314,10 +314,10 @@ PENS
 "Prod." 1.0 0 -955883 true "" "plot harvest"
 
 SLIDER
-89
-53
-223
-86
+76
+10
+210
+43
 antal-barn
 antal-barn
 0
@@ -329,10 +329,10 @@ per vuxen
 HORIZONTAL
 
 PLOT
-656
-230
-1009
-421
+497
+270
+825
+461
 Födda och döda
 NIL
 NIL
@@ -348,11 +348,11 @@ PENS
 "Döda" 1.0 0 -955883 true "" "plot avlidna"
 
 BUTTON
-101
-149
-201
-182
-NIL
+6
+49
+68
+82
+Ladda
 setupImage
 NIL
 1
