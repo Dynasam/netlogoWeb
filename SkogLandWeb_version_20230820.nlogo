@@ -68,6 +68,7 @@ end
 
 ;https://github.com/NetLogo/ImportA-Extension#readme
 to setupImage
+  clear-all
   ;;Läs in bilden från fil
 ;  fetch:file-async "C:/Users/fredr/OneDrive - Dynasam/Dynasam/Simuleringsexempel/Utvecklingsprojekt/Degrowth/Island_for_netlogo.png" [
   fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
@@ -77,13 +78,13 @@ to setupImage
 end
 
 to setup
-  clear-all
+;  clear-all
   set harvest 0
 ;  setupImage
-  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
-    text ->
-    import-a:pcolors text
-  ]
+;  fetch:url-async "https://raw.githubusercontent.com/Dynasam/netlogoWeb/main/Island_for_netlogo.png" [
+;    text ->
+;    import-a:pcolors text
+;  ]
   ask patches [
     if pcolor > 51 and pcolor < 54 [set pcolor 2]
     set init-color pcolor
@@ -345,6 +346,23 @@ true
 PENS
 "Födda" 1.0 0 -10899396 true "" "plot födda"
 "Döda" 1.0 0 -955883 true "" "plot avlidna"
+
+BUTTON
+101
+149
+201
+182
+NIL
+setupImage
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
